@@ -1,63 +1,60 @@
 import {canvas} from "./canvas.js";
 import {canvasContext} from "./canvas.js";
 export class object{
-  constructor(canvasContext, x, y, width,height,points)
+  constructor(myConfig, x, y, width,height)
   {
-    this.points=points
-    this.x=x
-    this.y=y
+    this.points=myConfig.playerStartPoints
+    this.gravity=myConfig.gravity
+    this.position={
+      x:x,
+      y:y
+    }
+        this.velocity={
+      x:0,
+      y:0
+    }
     this.width=width;
     this.height=height;
     this.velocityY=0;
     this.velocityX=0;
-    // this.move;
+    this.color="blue";
+    this.image
+    this.imageSrc
+    this.animationId
+    this.move();
   }
-  draw(canvasContext,x,y){
-    this.color="red";
+  draw(){
+
   canvasContext.fillStyle=this.color
-  canvasContext.fillRect(x, y, this.width, this.height)
+  canvasContext.fillRect(this.position.x, this.position.y, this.width, this.height)
   }
   
-  move(canvasContext, gravity){
-    window.requestAnimationFrame(()=>this.move(canvasContext, gravity))
-    // canvasContext.clearRect(0,0,canvas.width, canvas.height);
-    if(this.x+this.width+this.velocityX>=canvas.width&&this.velocityX>0){
-      this.velocityX=0;
-      this.x=canvas.width-this.width
+  move(){
+    this.animationId=window.requestAnimationFrame(()=>this.move())
+    if(this.position.x+this.width+this.velocity.x>=canvas.width&&this.velocity.x>0){
+      this.velocity.x=0;
+      this.position.x=canvas.width-this.width
       }
-    if(this.x+this.velocityX<0){
-      this.velocityX=0;
-      this.x=0
+    if(this.position.x+this.velocity.x<0){
+      this.velocity.x=0;
+      this.position.x=0
       }
     else{
-    this.x=this.x+this.velocityX;
+    this.position.x=this.position.x+this.velocity.x;
     }
-    if(this.y+this.height+this.velocityY>=canvas.height){
-      this.y=canvas.height-this.height;
-    this.velocityY=0;
+    if(this.position.y+this.height+this.velocity.y>=canvas.height){
+      this.position.y=canvas.height-this.height;
+    this.velocity.y=0;
     }
-    else this.velocityY+=gravity;
-    this.y=this.y+this.velocityY;
-    this.draw(canvasContext,this.x,this.y)
+    else this.velocity.y+=this.gravity;
+    this.position.y=this.position.y+this.velocity.y;
+    this.draw()
+
   }
-  ObjectMove(){
- 
-  window.addEventListener('keyup',(event)=>{
-    console.log(event.key);
-    event.key=="ArrowRight"? this.velocityX=0:""
-    event.key=="ArrowLeft"? this.velocityX=0:""
-  })
-  window.addEventListener('keydown',(event)=>{
-    console.log(event.key);
-    event.key=="ArrowRight"? this.velocityX=10:""
-    event.key=="ArrowLeft"? this.velocityX=-10:""
-  })
-  window.addEventListener('keydown',(event)=>{
-    console.log(event.key);
-    event.key=="ArrowUp"? this.velocityY=-10:""
-    //event.key=="ArrowLeft"? this.velocityX=-10:""
-  })
-  }
+endAnimation(){
+  cancelAnimationFrame(this.animationId)
+}
+  
   
 }
   
