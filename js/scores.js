@@ -1,10 +1,10 @@
+import { playGetPointMusic } from "./sound.js"
 export const scoreElement=document.querySelector('#scoreElement')
-export class score{
-  constructor(myConfig,Player){
+export function updateScore(Player){
     scoreElement.innerHTML=Player.score
   }
-scorePoints(Player,Fruit){
+export function scorePoints(Player,Fruit){
   Player.score+=Fruit.score
-  scoreElement.innerHTML=Player.score
+  updateScore(Player)
+  playGetPointMusic()
 }
-  }

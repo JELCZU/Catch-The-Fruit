@@ -1,6 +1,6 @@
 import {object} from "./object.js";
 import {canvas, canvasContext} from "./canvas.js";
-import {player} from "./player.js";
+import { scorePoints } from "./scores.js";
 export class fruit extends object{
   constructor(myConfig, x, y, width,height)
   {
@@ -45,9 +45,9 @@ function CheckFruitsHitPlayer(fruit,index){
 
   if((fruit.position.x+fruit.width>=Player1.position.x)&&(fruit.position.x<=Player1.position.x+Player1.width)&&(fruit.position.y+fruit.height>=Player1.position.y)&&(fruit.position.y<=Player1.position.y+Player1.height)){
     console.log("Player1 gets Score")
-    let audio=new Audio("./audio/getPoint.mp3")
-    audio.play();
-    // scoreP1.scorePoints(Player1,fruit)
+    // let audio=new Audio("./src/audio/getPoint.mp3")
+    // audio.play();
+    scorePoints(Player1,fruit)
     fruits[index].endAnimation();
     fruits.splice(index, 1)
   }
