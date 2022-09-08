@@ -1,18 +1,17 @@
 import {canvasSetUp} from "./canvas.js";
 import {canvasContext} from "./canvas.js";
+import {spawnFruits} from "./fruit.js";
 import {canvas} from "./canvas.js";
+import {config} from "./config.js";
 import {player} from "./player.js";
 import {fruit} from "./fruit.js";
-const gravity=0.2;
-const velocityx=0;
-const velocityY=0;
+
 //import {update} from "./player.js";
 const init= ()=>{
+ const myConfig= new config()
 canvasSetUp(canvas,canvasContext);
-const Player2 = new player(canvasContext, canvas.width/2,canvas.height-150,10,150,10)
-Player2.move(canvasContext,gravity,velocityx,velocityY)
-const apple = new fruit(canvasContext,Math.random()*canvas.width,0,20,20,10)
-apple.move(canvasContext,gravity,velocityx,velocityY)
-// Player2.ObjectMove()
+const Player1 = new player(myConfig, canvas.width/2,canvas.height-150,50,100)
+
+spawnFruits(myConfig,Player1)
 }
 document.addEventListener("DOMContentLoaded",init)
