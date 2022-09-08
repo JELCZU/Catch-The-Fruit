@@ -1,16 +1,6 @@
 import {object} from "./object.js";
 import {canvas, canvasContext} from "./canvas.js";
 import {player} from "./player.js";
-export class fruit extends object{
-  constructor(myConfig, x, y, width,height)
-  {
-   super(myConfig, x, y, width,height)
-   this.score=myConfig.playerStartScore
-  }
-  keysStatus(){}
-  ObjectMove(){}
-
-}
 export const fruits=[]
 export function spawnFruits(myConfig,Player1){
 
@@ -45,9 +35,7 @@ function CheckFruitsHitPlayer(fruit,index){
 
   if((fruit.position.x+fruit.width>=Player1.position.x)&&(fruit.position.x<=Player1.position.x+Player1.width)&&(fruit.position.y+fruit.height>=Player1.position.y)&&(fruit.position.y<=Player1.position.y+Player1.height)){
     console.log("Player1 gets Score")
-    let audio=new Audio("./audio/getPoint.mp3")
-    audio.play();
-    // scoreP1.scorePoints(Player1,fruit)
+    scoreP1.scorePoints(Player1,fruit)
     fruits[index].endAnimation();
     fruits.splice(index, 1)
   }

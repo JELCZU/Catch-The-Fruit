@@ -5,6 +5,7 @@ export class player extends object{
   constructor(myConfig, x, y, width,height)
   {
    super(myConfig, x, y, width,height)
+   this.score=myConfig.playerStartScore
    this.keys={
     a:{
       pressed:false
@@ -13,6 +14,9 @@ export class player extends object{
       pressed:false
     },
     w:{
+      pressed:false
+    },
+    s:{
       pressed:false
     }
   }
@@ -23,15 +27,18 @@ export class player extends object{
   keysStatus(){
     window.requestAnimationFrame(()=>this.keysStatus()) 
     if(this.keys.a.pressed ){
-     this.velocity.x=-10  
+     this.velocity.x=-15  
     }
     else if(this.keys.d.pressed){
-     this.velocity.x=10
+     this.velocity.x=15
     }
     else this.velocity.x=0;
     if(this.keys.w.pressed&&(this.position.y==canvas.height-this.height)){
      this.velocity.y=-10
     }
+    else if(this.keys.s.pressed){
+      this.velocity.y=this.velocity.y+2
+     }
   }
   
   ObjectMove(){
@@ -47,6 +54,9 @@ export class player extends object{
         case "w":
           this.keys.w.pressed=true
         break
+        case "s":
+          this.keys.s.pressed=true
+        break
         }
       })
   
@@ -61,7 +71,9 @@ export class player extends object{
           case "w":
             this.keys.w.pressed=false  
           break
-          
+          case "s":
+            this.keys.s.pressed=false  
+          break
           }
         })
     }
