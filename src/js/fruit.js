@@ -8,7 +8,9 @@ export class fruit extends object{
       this.fruitType=Math.round(Math.random()*(myConfig.fruitsTypes.length-1)+1)
    this.score=myConfig.fruitsTypes[this.fruitType-1].score
    console.log(this.score)
-  //  this.score=myConfig.playerStartScore
+   this.sprite.src='/src/img/Brown.jpg'
+   console.log(this.sprite)
+
   }
   keysStatus(){}
   ObjectMove(){}

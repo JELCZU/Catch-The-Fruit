@@ -1,0 +1,26 @@
+{
+  "name": "fruit-collector",
+  "version": "1.0.0",
+  "description": "Canvys game where we collect fruits",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JELCZU/Fruit-collector.git"
+  },
+  "keywords": [
+    "fruits",
+    "fruit",
+    "collect",
+    "game",
+    "canvys"
+  ],
+  "author": "Kamil Jarczak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JELCZU/Fruit-collector/issues"
+  },
+  "homepage": "https://github.com/JELCZU/Fruit-collector#readme"
+}

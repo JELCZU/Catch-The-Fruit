@@ -1,5 +1,4 @@
 import {canvas,canvasContext,canvasSetUp,canvasGameBoard} from "./canvas.js";
-// import {spawnFruits} from "./fruit.js";
 import {config} from "./config.js";
 import {player} from "./player.js";
 import { gameMode1 } from "./gameMode1.js";
@@ -10,7 +9,6 @@ const init= ()=>{
   // const myCanvasGameBoard=new canvasGameBoard()
   canvasSetUp(canvas,canvasContext);
   const Player1 = new player(myConfig, canvas.width/2,canvas.height-150,50,100)
-  // spawnFruits(myConfig,Player1)
   const MygameMode1=new gameMode1(myConfig,Player1)
   updateScore(Player1)
 }
