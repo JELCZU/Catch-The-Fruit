@@ -1,43 +1,53 @@
-import {object} from "./object.js";
+import {fruit} from "./fruit.js";
+import {config} from "./config.js";
 import {canvas, canvasContext} from "./canvas.js";
-import {player} from "./player.js";
-export const fruits=[]
-export function spawnFruits(myConfig,Player1){
+import {scorePoints} from "./scores.js";
+//const fruits=[]
+export class gameMode1{
+  constructor(myConfig,Player1){
+  this.myConfig=myConfig
+  this.Player1=Player1
+    this.fruits=[]
+    this.spawnFruits()
+    this.CheckFruitsposition()
+    }
+  spawnFruits(){
+    console.log(this.Player1.position) 
+    this.fruits.push(new fruit(this.myConfig, Math.random()*canvas.width,0,10,50))
+    this.SpawnTimeoutId=setTimeout(() => {this.spawnFruits()},Math.random()*(this.myConfig.fruitsMaxRespawnTime-this.myConfig.fruitsMinRespawnTime)+this.myConfig.fruitsMinRespawnTime,this.myConfig);
 
-mySpawnFunction()
-CheckFruitsposition.apply(null,Player1)
-
-function mySpawnFunction() {
-    fruits.push(new fruit(myConfig, Math.random()*canvas.width,0,10,50))
-    
-    setTimeout(mySpawnFunction,Math.random()*(myConfig.frutsMaxRespawnTime-myConfig.frutsMinRespawnTime)+myConfig.frutsMinRespawnTime);
-
+  
   }
-function CheckFruitsposition(){
-
-  window.requestAnimationFrame(CheckFruitsposition)
-  if (fruits.length>0){ 
-
-    fruits.forEach((fruit,index)=>{
-      CheckFruitsHitGround(fruit,index)
-      if (fruits.length>0){ 
-      CheckFruitsHitPlayer(fruit,index)
-      } 
-},Player1)
+  CheckFruitsposition(){
+    window.requestAnimationFrame(() =>this.CheckFruitsposition())
+    if (this.fruits.length>0){ 
+      this.fruits.forEach((fruit,index)=>{
+        this.CheckFruitsHitGround(fruit,index)
+        if (this.fruits.length>0){ 
+        this.CheckFruitsHitPlayer(fruit,index)
+        } 
+      },this.Player1)
+    }
   }
-}
-function CheckFruitsHitGround(fruit,index){
-if(fruit.position.y+fruit.height>=canvas.height){
-  // console.log("hit ground-game over"+index)
-}
-}
-function CheckFruitsHitPlayer(fruit,index){
+  CheckFruitsHitGround(fruit,index){
+    if(fruit.position.y+fruit.height>=canvas.height){
+      clearTimeout(this.SpawnTimeoutId);
+      this.fruits.forEach((fruit,index)=>{
+        // console.log(SpawnTimeoutId)
+        this.fruits[index].endAnimation()
+        // fruits.splice(index, 1)
+      })
+      this.emptyFruits=[]
+      this.fruits=this.emptyFruits
+      document.querySelector('#displayText').innerHTML = 'Game over!!!'
+    }
+  }
+  CheckFruitsHitPlayer(fruit,index){
+    if((fruit.position.x+fruit.width>=this.Player1.position.x)&&(fruit.position.x<=this.Player1.position.x+this.Player1.width)&&(fruit.position.y+fruit.height>=this.Player1.position.y)&&(fruit.position.y<=this.Player1.position.y+this.Player1.height)){
+      scorePoints(this.Player1,fruit)
+      this.fruits[index].endAnimation();
+      this.fruits.splice(index, 1)
+    }
+    }
 
-  if((fruit.position.x+fruit.width>=Player1.position.x)&&(fruit.position.x<=Player1.position.x+Player1.width)&&(fruit.position.y+fruit.height>=Player1.position.y)&&(fruit.position.y<=Player1.position.y+Player1.height)){
-    console.log("Player1 gets Score")
-    scoreP1.scorePoints(Player1,fruit)
-    fruits[index].endAnimation();
-    fruits.splice(index, 1)
-  }
-  }
 }
