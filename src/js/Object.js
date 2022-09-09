@@ -2,7 +2,7 @@ import {canvas, canvasContext} from "./canvas.js";
 export class object{
   constructor(myConfig, x, y, width,height)
   {
-    this.points=myConfig.playerStartPoints
+    this.score=10
     this.gravity=myConfig.gravity
     this.position={
       x:x,
