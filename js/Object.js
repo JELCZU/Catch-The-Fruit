@@ -17,19 +17,23 @@ export class object{
     this.velocityY=0;
     this.velocityX=0;
     this.color="blue";
-    this.image
-    this.imageSrc
+    this.sprite=new Image()
+    this.sprite.src="none"
     this.animationId
-    this.move();
+    this.update();
   }
   draw(){
 
   canvasContext.fillStyle=this.color
   canvasContext.fillRect(this.position.x, this.position.y, this.width, this.height)
-  }
+  if (this.sprite.src!="none"){
+    canvasContext.drawImage(this.sprite, this.position.x, this.position.y, this.sprite.width, this.sprite.width)
+    
+  }  
+}
   
-  move(){
-    this.animationId=window.requestAnimationFrame(()=>this.move())
+  update(){
+    this.animationId=window.requestAnimationFrame(()=>this.update())
     if(this.position.x+this.width+this.velocity.x>=canvas.width&&this.velocity.x>0){
       this.velocity.x=0;
       this.position.x=canvas.width-this.width

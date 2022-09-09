@@ -14,8 +14,6 @@ export class gameMode1{
   spawnFruits(){
     this.fruits.push(new fruit(this.myConfig, Math.random()*canvas.width,0,10,50))
     this.SpawnTimeoutId=setTimeout(() => {this.spawnFruits()},Math.random()*(this.myConfig.fruitsMaxRespawnTime-this.myConfig.fruitsMinRespawnTime)+this.myConfig.fruitsMinRespawnTime,this.myConfig);
-
-  
   }
   CheckFruitsposition(){
     window.requestAnimationFrame(() =>this.CheckFruitsposition())

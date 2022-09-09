@@ -19,12 +19,12 @@ export class player extends object{
       pressed:false
     }
   }
-  this.keysStatus()
-   this.ObjectMove();
+   this.playerControl();
+   this.keysStatus()
   }
  
-  keysStatus(){
-    window.requestAnimationFrame(()=>this.keysStatus()) 
+  playerControl(){
+    window.requestAnimationFrame(()=>this.playerControl()) 
     if(this.keys.a.pressed ){
      this.velocity.x=-15  
     }
@@ -40,7 +40,7 @@ export class player extends object{
      }
   }
   
-  ObjectMove(){
+  keysStatus(){
 
     window.addEventListener('keydown',(event)=>{
       switch (event.key){     
