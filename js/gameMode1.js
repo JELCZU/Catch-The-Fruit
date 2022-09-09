@@ -12,7 +12,6 @@ export class gameMode1{
     this.CheckFruitsposition()
     }
   spawnFruits(){
-    console.log(this.Player1.position) 
     this.fruits.push(new fruit(this.myConfig, Math.random()*canvas.width,0,10,50))
     this.SpawnTimeoutId=setTimeout(() => {this.spawnFruits()},Math.random()*(this.myConfig.fruitsMaxRespawnTime-this.myConfig.fruitsMinRespawnTime)+this.myConfig.fruitsMinRespawnTime,this.myConfig);
 
@@ -26,16 +25,14 @@ export class gameMode1{
         if (this.fruits.length>0){ 
         this.CheckFruitsHitPlayer(fruit,index)
         } 
-      },this.Player1)
+      })
     }
   }
   CheckFruitsHitGround(fruit,index){
     if(fruit.position.y+fruit.height>=canvas.height){
       clearTimeout(this.SpawnTimeoutId);
       this.fruits.forEach((fruit,index)=>{
-        // console.log(SpawnTimeoutId)
         this.fruits[index].endAnimation()
-        // fruits.splice(index, 1)
       })
       this.emptyFruits=[]
       this.fruits=this.emptyFruits

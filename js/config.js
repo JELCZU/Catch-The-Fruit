@@ -1,9 +1,9 @@
 export class config{
   constructor(){
   this.gravity=0.1;
-  this.fruitsMaxRespawnTime=1000//in ms
+  this.fruitsMaxRespawnTime=3000//in ms
   this.fruitsMinRespawnTime=1000    //in ms
-  this.playerStartScore=20;
+  this.playerStartScore=0;
   this.fruitsTypes = [
     {
         name : "Apple",
