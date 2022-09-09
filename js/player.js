@@ -1,5 +1,4 @@
-import {canvas} from "./canvas.js";
-import {canvasContext} from "./canvas.js";
+import {canvas, canvasContext} from "./canvas.js";
 import {object} from "./object.js";
 export class player extends object{
   constructor(myConfig, x, y, width,height)
