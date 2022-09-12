@@ -20,7 +20,7 @@ function drawBgImg() {
     
   //   const animationId=canvasContext.drawImage(bgImg, 0, 0, bgImg.width, bgImg.height);
   // }
-    const animationId=canvasContext.drawImage(bgImg, 0, 0, bgImg.width, bgImg.height);
+  canvasContext.drawImage(bgImg, 0, 0, bgImg.width, bgImg.height);
 }
 
 
