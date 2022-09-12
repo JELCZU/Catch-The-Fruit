@@ -4,7 +4,13 @@ export class player extends object{
   constructor(myConfig, x, y, width,height)
   {
    super(myConfig, x, y, width,height)
-   this.score=myConfig.playerStartScore
+   this.score=myConfig.player[0].startScore
+   this.image.src=myConfig.player[0].imageSource
+   this.framesMax=myConfig.player[0].framesMax
+   this.scale=3
+   this.width=this.image.width/this.framesMax*this.scale
+   this.height=this.image.height*this.scale
+   console.log(this.image.src)
    this.keys={
     a:{
       pressed:false
