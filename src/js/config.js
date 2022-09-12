@@ -3,19 +3,22 @@ export class config{
   this.gravity=0.1;
   this.fruitsMaxRespawnTime=3000//in ms
   this.fruitsMinRespawnTime=1000    //in ms
-  this.player=[
-    {
+  this.player={
     startScore:0,
     imageSource:"/src/img/Player.png",
     framesMax:11
-    }
-  ]
+  }
+    this.canvas={
+    width:1280,
+    height:720,
+    imageSource:'/src/img/brown.jpg'
+  }
   this.fruitsTypes = [
     {
-        name : "Apple",
-        score : 10,
-        imageSource:"/src/img/Apple.png",
-        framesMax:17
+      name : "Apple",
+      score : 10,
+      imageSource:"/src/img/Apple.png",
+      framesMax:17
     },
     {
       name : "Cherry",

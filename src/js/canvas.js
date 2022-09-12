@@ -1,10 +1,8 @@
 export const canvas=document.querySelector('canvas')
 export const canvasContext= canvas.getContext('2d')
-export function canvasSetUp(){
-// canvas.width=innerWidth*0.9
-// canvas.height=innerHeight*0.9
-canvas.width=1280
-canvas.height=720
+export function canvasSetUp(config){
+canvas.width=config.canvas.width
+canvas.height=config.canvas.height
 canvas.style.borderStyle="solid"
 canvasRefresh();
 }
@@ -13,37 +11,34 @@ function canvasRefresh(){
   drawBgImg();
 }
 function drawBgImg() {
-  let bgImg = new Image();
-  bgImg.src = '/src/img/backgroundMeadow.jpg';
-  // bgImg.src = '/src/img/Brown.jpg';
-  // bgImg.onload = () => {
-    
-  //   const animationId=canvasContext.drawImage(bgImg, 0, 0, bgImg.width, bgImg.height);
-  // }
-  canvasContext.drawImage(bgImg, 0, 0, bgImg.width, bgImg.height);
+  let bgImg = new Image()
+  bgImg.src = '/src/img/backgroundMeadow.jpg'
+  canvasContext.drawImage(bgImg, 0, 0, bgImg.width, bgImg.height)
 }
 
 
 export class canvasGameBoard{
-  constructor(){
-  canvas.width=innerWidth*0.9
-  canvas.height=innerHeight*0.9
-  canvas.style.borderStyle="solid"
-  // canvas.style.background="./img/backgroundMeadow.jpg"
-  // canvas.style.background="./img/Brown.jpg"
+  constructor(config){
+    canvas.width=this.width=config.canvas.width
+    canvas.height=this.height=config.canvas.height
+    this.bgImage=new Image()
+    this.bgImage.src=config.canvas.imageSource
+    this.bgPointer={
+      x:0,
+      y:0
+    }
   this.canvasRefresh();
   }
 
   canvasRefresh(){
-    window.requestAnimationFrame(()=>this.canvasRefresh)
-    this.drawBgImg();
+    window.requestAnimationFrame(()=>this.canvasRefresh())
+    this.drawBgImage();
   }
-  drawBgImg() {
-    // let bgImg = new Image();
-    // //bgImg.src = '/src/img/backgroundMeadow.jpg';
-    // bgImg.src = '/src/img/Brown.jpg';
-    // bgImg.onload = () => {
-    //   const animationId=canvasContext.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
-    // }
+  drawBgImage() {
+    
+    canvasContext.drawImage(this.bgImage,0,0, this.bgImage.width, this.bgImage.height, 0, 0, this.bgImage.width, this.bgImage.height)
+
+      // this.animationId=canvasContext.drawImage(this.bgImage, 0, 0, canvas.width, canvas.height);
+  
   }
 }
