@@ -17,19 +17,22 @@ export class object{
     this.velocityY=0;
     this.velocityX=0;
     this.color="blue";
-    this.sprite=new Image()
-    this.sprite.src="none"
+    this.image=new Image()
+    this.image.src="/src/img/Graphic-Not-Found.png"
+    this.framesMax=1
+    this.scale=2
+    this.width=this.image.width/this.framesMax*this.scale
+    this.height=this.image.height*this.scale
     this.animationId
     this.update();
   }
   draw(){
 
   canvasContext.fillStyle=this.color
-  canvasContext.fillRect(this.position.x, this.position.y, this.width, this.height)
-  if (this.sprite.src!="none"){
-    canvasContext.drawImage(this.sprite, this.position.x, this.position.y, this.sprite.width, this.sprite.width)
-    
-  }  
+  // canvasContext.fillRect(this.position.x, this.position.y, this.width, this.height)
+    // canvasContext.drawImage(this.image, this.position.x, this.position.y, this.image.width/this.framesMax, this.image.height/this.framesMax)
+    canvasContext.drawImage(this.image,0,0, this.image.width/this.framesMax, this.image.height, this.position.x, this.position.y, this.image.width/this.framesMax*this.scale, this.image.height*this.scale)
+
 }
   
   update(){

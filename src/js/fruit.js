@@ -7,9 +7,12 @@ export class fruit extends object{
    super(myConfig, x, y, width,height)
       this.fruitType=Math.round(Math.random()*(myConfig.fruitsTypes.length-1)+1)
    this.score=myConfig.fruitsTypes[this.fruitType-1].score
-   console.log(this.score)
-   this.sprite.src='/src/img/Brown.jpg'
-   console.log(this.sprite)
+   this.image.src=myConfig.fruitsTypes[this.fruitType-1].imageSource
+   this.framesMax=myConfig.fruitsTypes[this.fruitType-1].framesMax
+   this.scale=3
+   this.width=this.image.width/this.framesMax*this.scale
+   this.height=this.image.height*this.scale
+   console.log(this.image.src)
 
   }
   keysStatus(){}

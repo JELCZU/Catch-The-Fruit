@@ -8,17 +8,20 @@ export class config{
     {
         name : "Apple",
         score : 10,
-        graphicSource:""
+        imageSource:"/src/img/Apple.png",
+        framesMax:17
     },
     {
       name : "Banana",
       score : 20,
-      graphicSource:""
+      imageSource:"/src/img/Bananas.png",
+      framesMax:17
     },
     {
       name : "Orange",
       score : 30,
-      graphicSource:""
+      imageSource:"/src/img/Orange.png",
+      framesMax:17
     },
 ]
   }
