@@ -1,22 +1,5 @@
 export const canvas=document.querySelector('canvas')
 export const canvasContext= canvas.getContext('2d')
-export function canvasSetUp(config){
-canvas.width=config.canvas.width
-canvas.height=config.canvas.height
-canvas.style.borderStyle="solid"
-canvasRefresh();
-}
-function canvasRefresh(){
-  window.requestAnimationFrame(canvasRefresh)
-  drawBgImg();
-}
-function drawBgImg() {
-  let bgImg = new Image()
-  bgImg.src = '/src/img/backgroundMeadow.jpg'
-  canvasContext.drawImage(bgImg, 0, 0, bgImg.width, bgImg.height)
-}
-
-
 export class canvasGameBoard{
   constructor(config){
     canvas.width=this.width=config.canvas.width
@@ -35,10 +18,16 @@ export class canvasGameBoard{
     this.drawBgImage();
   }
   drawBgImage() {
-    
-    canvasContext.drawImage(this.bgImage,0,0, this.bgImage.width, this.bgImage.height, 0, 0, this.bgImage.width, this.bgImage.height)
+    this.bgPointer.x=0
+  this.bgPointer.y=0
+//     while(this.bgPointer.y+this.bgImage.height<=this.height){
+  //   while(this.bgPointer.x+this.bgImage.width<=this.width){
+  //     canvasContext.drawImage(this.bgImage,0,0, this.bgImage.width, this.bgImage.height, this.bgPointer.x, this.bgPointer.y, this.bgImage.width, this.bgImage.height)
+  //     this.bgPointer.x+=this.bgImage.width
+  // }
+  // this.bgPointer.x=0
+  // this.bgPointer.y+=this.bgImage.height
+      canvasContext.drawImage(this.bgImage,0,0, this.bgImage.width, this.bgImage.height, this.bgPointer.x, this.bgPointer.y, this.bgImage.width, this.bgImage.height)
 
-      // this.animationId=canvasContext.drawImage(this.bgImage, 0, 0, canvas.width, canvas.height);
-  
   }
 }

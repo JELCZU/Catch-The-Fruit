@@ -1,8 +1,7 @@
 import {fruit} from "./fruit.js";
-import {config} from "./config.js";
 import {canvas, canvasContext} from "./canvas.js";
-import {scorePoints} from "./scores.js";
-//const fruits=[]
+import {scorePoints,scoreElement} from "./scores.js";
+import { playLoseGameMusic } from "./sound.js";
 export class gameMode1{
   constructor(myConfig,Player1){
   this.myConfig=myConfig
@@ -35,6 +34,10 @@ export class gameMode1{
       this.emptyFruits=[]
       this.fruits=this.emptyFruits
       document.querySelector('#displayText').innerHTML = 'Game over!!!'
+      console.log(document.querySelector('#menuBlock').style.display);
+      document.querySelector('#menuBlock').style.display="block";
+      document.querySelector('#scoreElementMenu').innerHTML=scoreElement.innerHTML
+      playLoseGameMusic();
     }
   }
   CheckFruitsHitPlayer(fruit,index){

@@ -27,12 +27,9 @@ export class object{
     this.update();
   }
   draw(){
-
   // canvasContext.fillStyle=this.color
   // canvasContext.fillRect(this.position.x, this.position.y, this.width, this.height)
-  
   canvasContext.drawImage(this.image,0,0, this.image.width/this.framesMax, this.image.height, this.position.x, this.position.y, this.image.width/this.framesMax*this.scale, this.image.height*this.scale)
-
 }
   
   update(){
@@ -55,7 +52,7 @@ export class object{
     else this.velocity.y+=this.gravity;
     this.position.y=this.position.y+this.velocity.y;
     this.draw()
-
+console.log(this.position.x)
   }
 endAnimation(){
   cancelAnimationFrame(this.animationId)

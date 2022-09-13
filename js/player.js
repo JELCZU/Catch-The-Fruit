@@ -10,7 +10,7 @@ export class player extends object{
    this.scale=3
    this.width=this.image.width/this.framesMax*this.scale
    this.height=this.image.height*this.scale
-   console.log(this.image.src)
+   this.position.x=canvas.width/2-this.width/2
    this.keys={
     a:{
       pressed:false
