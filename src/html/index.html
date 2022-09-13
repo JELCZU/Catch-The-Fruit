@@ -6,11 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fruit collector</title>
   <link rel="icon" type="image/png" href="/src/img/apple-Favicon.png" >
+  <link rel="stylesheet" href="/src/css/index.css">
 </head>
-<body>
-<div>
-  <div style="position: fixed;
-    padding: 1%;
+<body style="margin: 0; align-content: center; background-image: url('/src/img/Brown.png');">
+<div >
+
+  
+  <canvas  class="myCanvas"></canvas>
+  <div style="position: absolute;
+    padding-left: 18%;
+    padding-top: 8%;
     color: white;
     font-size: xx-large;
     ">
@@ -22,17 +27,22 @@
     color: black;
     align-items: center;
     justify-content: center;
-    top: 300px;
+    top: 30%;
     right:0;
     bottom: 0;
-    left:  600px;
+    left:  46%;
     display: block;
     font-size: xx-large;
     border-width: 5px;
-  "
->
+  ">
   </div>
-  <canvas width="640" height="150" style="border: solid;"></canvas>
+  <div id="menuBlock" class="menuBlock" ">
+    <div>
+      <h1 id="scoreElementMenu" style="text-align:center; ">0</h1>
+      <H2 style="text-align:center;">Points</h1>
+      <button  class="btn-center" id="startGame">Start Game</button>
+    </div>
+  </div>
   <script type="module" src="/src/js/index.js"></script>
 </div>
 </body>
