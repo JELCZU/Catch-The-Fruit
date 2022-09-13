@@ -11,6 +11,7 @@ export class player extends object{
    this.width=this.image.width/this.framesMax*this.scale
    this.height=this.image.height*this.scale
    this.position.x=canvas.width/2-this.width/2
+   this.position.y=400
    this.keys={
     a:{
       pressed:false
@@ -38,7 +39,7 @@ export class player extends object{
      this.velocity.x=15
     }
     else this.velocity.x=0;
-    if(this.keys.w.pressed&&(this.position.y==canvas.height-this.height)){
+    if(this.keys.w.pressed&&(this.position.y==canvas.height-this.height-55)){
      this.velocity.y=-10
     }
     else if(this.keys.s.pressed){

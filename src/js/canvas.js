@@ -20,14 +20,13 @@ export class canvasGameBoard{
   drawBgImage() {
     this.bgPointer.x=0
   this.bgPointer.y=0
-//     while(this.bgPointer.y+this.bgImage.height<=this.height){
   //   while(this.bgPointer.x+this.bgImage.width<=this.width){
   //     canvasContext.drawImage(this.bgImage,0,0, this.bgImage.width, this.bgImage.height, this.bgPointer.x, this.bgPointer.y, this.bgImage.width, this.bgImage.height)
   //     this.bgPointer.x+=this.bgImage.width
   // }
   // this.bgPointer.x=0
-  // this.bgPointer.y+=this.bgImage.height
-      canvasContext.drawImage(this.bgImage,0,0, this.bgImage.width, this.bgImage.height, this.bgPointer.x, this.bgPointer.y, this.bgImage.width, this.bgImage.height)
+
+      canvasContext.drawImage(this.bgImage,0,0, this.bgImage.width, this.bgImage.height, this.bgPointer.x, this.bgPointer.y, this.width, this.height)
 
   }
 }

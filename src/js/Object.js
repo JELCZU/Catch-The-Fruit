@@ -14,8 +14,6 @@ export class object{
     }
     this.width=width;
     this.height=height;
-    this.velocityY=0;
-    this.velocityX=0;
     this.color="blue";
     this.image=new Image()
     this.image.src="/src/img/Graphic-Not-Found.png"
@@ -33,6 +31,8 @@ export class object{
 }
   
   update(){
+    // console.log("this y: "+ this.position.y)
+    // console.log("canvas height: "+canvas.height)
     this.animationId=window.requestAnimationFrame(()=>this.update())
     if(this.position.x+this.width+this.velocity.x>=canvas.width&&this.velocity.x>0){
       this.velocity.x=0;
@@ -45,14 +45,14 @@ export class object{
     else{
     this.position.x=this.position.x+this.velocity.x;
     }
-    if(this.position.y+this.height+this.velocity.y>=canvas.height){
-      this.position.y=canvas.height-this.height;
+    if(this.position.y+this.height+this.velocity.y>=canvas.height-55){
+      this.position.y=canvas.height-this.height-55;
     this.velocity.y=0;
     }
-    else this.velocity.y+=this.gravity;
+    else {this.velocity.y+=this.gravity;
     this.position.y=this.position.y+this.velocity.y;
+    }
     this.draw()
-console.log(this.position.x)
   }
 endAnimation(){
   cancelAnimationFrame(this.animationId)

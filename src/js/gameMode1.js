@@ -1,14 +1,15 @@
+import {menuBlock,scoreElementMenu,startBtn} from "./index.js";
 import {fruit} from "./fruit.js";
 import {canvas, canvasContext} from "./canvas.js";
 import {scorePoints,scoreElement} from "./scores.js";
 import { playLoseGameMusic } from "./sound.js";
+import {updateScore} from "./scores.js";
 export class gameMode1{
   constructor(myConfig,Player1){
   this.myConfig=myConfig
   this.Player1=Player1
     this.fruits=[]
-    this.spawnFruits()
-    this.CheckFruitsposition()
+
     }
   spawnFruits(){
     this.fruits.push(new fruit(this.myConfig, Math.random()*(canvas.width-canvas.width*0.05),0,10,50))
@@ -26,7 +27,7 @@ export class gameMode1{
     }
   }
   CheckFruitsHitGround(fruit,index){
-    if(fruit.position.y+fruit.height>=canvas.height){
+    if(fruit.position.y+fruit.height>=canvas.height-55){
       clearTimeout(this.SpawnTimeoutId);
       this.fruits.forEach((fruit,index)=>{
         this.fruits[index].endAnimation()
@@ -34,9 +35,8 @@ export class gameMode1{
       this.emptyFruits=[]
       this.fruits=this.emptyFruits
       document.querySelector('#displayText').innerHTML = 'Game over!!!'
-      console.log(document.querySelector('#menuBlock').style.display);
-      document.querySelector('#menuBlock').style.display="block";
-      document.querySelector('#scoreElementMenu').innerHTML=scoreElement.innerHTML
+      menuBlock.style.display="block";
+      scoreElementMenu.innerHTML=scoreElement.innerHTML
       playLoseGameMusic();
     }
   }
@@ -47,5 +47,13 @@ export class gameMode1{
       this.fruits.splice(index, 1)
     }
     }
+  startGame(fruit,index){
+    document.querySelector('#displayText').innerHTML = ''
+    menuBlock.style.display="none"
+    this.Player1.score=0;
+    updateScore(this.Player1)
+    this.spawnFruits()
+    this.CheckFruitsposition()
+      }
 
 }
