@@ -15,7 +15,7 @@
   <canvas  class="myCanvas"></canvas>
   <div style="position: absolute;
     padding-left: 18%;
-    padding-top: 8%;
+    padding-top: 9%;
     color: white;
     font-size: xx-large;
     ">
@@ -36,11 +36,59 @@
     border-width: 5px;
   ">
   </div>
-  <div id="menuBlock" class="menuBlock" ">
+  <div id="menuBlock" class="menuBlock" >
     <div>
       <h1 id="scoreElementMenu" style="text-align:center; ">0</h1>
-      <H2 style="text-align:center;">Points</h1>
-      <button  class="btn-center" id="startGame">Start Game</button>
+      <H2 style="text-align:center;">Points</h2>
+      <button  class="btn-center" id="startGameBtn">Start Game</button>
+      <button  class="btn-center" id="howToPlayBtn">How to play</button>
+    </div>
+  </div>
+  <div id="howToPlayBlock" class="menuBlock" style="padding:0%;display: none;" >
+    <div>
+      <h1 id="scoreElementMenu" style="text-align:center; ">How to play</h1>
+      <h2  class="btn-center" id="startGameBtn">Goal of the game is to collect fruits. Every fruit gives you points. Your score is visible at left corner and you can see them at the end of game.</H2>
+        <table class="btn-center" style="margin-top: 35%;">
+          <td  style="border-width: 0px;">
+            <table>
+              <tr>
+                <td ><h2>Key</h2></td> <td><h2>Action</h2></td>
+              </tr>
+              <tr>
+                <td ><h2>W</h2></td> <td><h2>Jump</h2></td>
+              </tr>
+              <tr>
+                <td><h2>A</h2></td> <td><h2>Left</h2></td>
+              </tr>
+              <tr>
+                <td><h2>S</h2></td> <td><h2>Dive in air</h2></td>
+              </tr>
+              <tr>
+                <td><h2>D</h2></td> <td><h2>Right</h2></td>
+              </tr>
+            </table>
+          </td>
+          <td style="border-width: 0px;">
+            <table style="">
+              <tr>
+                <td ><h2>Fruit</h2></td> <td><h2>Points</h2></td>
+              </tr>
+              <tr>
+                <td><img src="/src/img/Apple.png" height="56" width="48"alt="Apple"></td> <td><h2>+10 points</h2></td>
+              </tr>
+              <tr>
+                <td><img src="/src/img/Cherries.png" height="56" width="56" alt="Cherries"></td> <td><h2>+15 points</h2></td>
+              </tr>
+              <tr>
+                <td><img src="/src/img/Bananas.png" height="56" width="56" alt="Bananas"></td> <td><h2>+20 points</h2></td>
+              </tr>
+              <tr>
+                <td><img src="/src/img/Orange.png" height="56" width="68" alt="Orange"></td> <td><h2>+30 points</h2></td>
+              </tr>
+            </table>
+          </td>
+        </table>
+      <button  class="btn-center" id="howToPlayCloseBtn" style="margin-top: 0%;">Close</button>
     </div>
   </div>
   <script type="module" src="/src/js/index.js"></script>
