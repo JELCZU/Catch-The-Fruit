@@ -12,7 +12,7 @@ Goal of the game is to catch the fruits.
 ## About app
 App is developed using HTML HTML+CSS+JavaScript. Game interface is based on canvas object.
 Game have also soud effects while the fruit is catched or when is game over.
-![The game](./img/The-Game.png) 
+![The game](https://github.com/JELCZU/Catch-The-Fruit/blob/master/img/The%20game.PNG) 
 
 Goal of the game is to catch the fruits. 
 Every catched fruit gives you points. 
