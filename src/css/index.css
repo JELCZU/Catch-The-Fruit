@@ -48,7 +48,7 @@ table, th, td { border: 5px solid black;
 
 }
 table{
-  top: 150%;
+  top: 50%;
   left: 50%;
   position:relative; 
   -ms-transform: translate(-50%, -50%);
