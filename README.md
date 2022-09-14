@@ -1,6 +1,7 @@
 # Catch The Fruit
+![The game](https://github.com/JELCZU/Catch-The-Fruit/blob/master/img/The%20game.PNG) 
 Catch the fruit is game developed using HTML+CSS+JavaScript.
-Goal of the game is to catch the fruits. 
+Goal of the game is to catch falling fruits. 
 ## Table of contents
 * [Instalation](#Instalation)
 * [About app](#About-app)
@@ -9,15 +10,26 @@ Goal of the game is to catch the fruits.
 
 ---
 ## Instalation
+To run project
+
+git clone https://github.com/YerbaMatePL/REACT-YourRecipes.git
+
+or download repository by clicking "Open with GitHub Desktop" or "Download ZIP"
+![How to download](https://github.com/JELCZU/Catch-The-Fruit/blob/master/img/How%20to%20download.PNG) 
+After download repository you can run project.
 ## About app
 App is developed using HTML HTML+CSS+JavaScript. Game interface is based on canvas object.
 Game have also soud effects while the fruit is catched or when is game over.
 ![The game](https://github.com/JELCZU/Catch-The-Fruit/blob/master/img/The%20game.PNG) 
 
-Goal of the game is to catch the fruits. 
+![Game menu](https://github.com/JELCZU/Catch-The-Fruit/blob/master/img/Game%20menu.PNG) 
+
+![How to play](https://github.com/JELCZU/Catch-The-Fruit/blob/master/img/How%20to%20play.PNG) 
+Goal of the game is to catch falling fruits. 
 Every catched fruit gives you points. 
 Your score is visible at left corner and you can see it at the end of game. 
 When fruit hits the ground then is game over.
+
 ## Technologies
 HTML
 
