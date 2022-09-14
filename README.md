@@ -12,7 +12,7 @@ Goal of the game is to catch falling fruits.
 ## Instalation
 To run project
 
-git clone https://github.com/YerbaMatePL/REACT-YourRecipes.git
+git clone https://github.com/JELCZU/Catch-The-Fruit.git
 
 or download repository by clicking "Open with GitHub Desktop" or "Download ZIP"
 ![How to download](https://github.com/JELCZU/Catch-The-Fruit/blob/master/img/How%20to%20download.PNG) 
