@@ -1,4 +1,4 @@
-import {menuBlock,scoreElementMenu,startBtn} from "./index.js";
+import {menuBlock,elementMenu,startBtn} from "./index.js";
 import {fruit} from "./fruit.js";
 import {canvas, canvasContext} from "./canvas.js";
 import {scorePoints,scoreElement} from "./scores.js";
@@ -36,7 +36,7 @@ export class gameMode1{
       this.fruits=this.emptyFruits
       document.querySelector('#displayText').innerHTML = 'Game over!!!'
       menuBlock.style.display="block";
-      scoreElementMenu.innerHTML=scoreElement.innerHTML
+      elementMenu.innerHTML=scoreElement.innerHTML
       playLoseGameMusic();
     }
   }
