@@ -1,5 +1,5 @@
 export const menuBlock=document.querySelector('#menuBlock')
-export const scoreElementMenu=document.querySelector('#scoreElementMenu')
+export const elementMenu=document.querySelector('#elementMenu')
 export const startBtn=document.querySelector('#startGameBtn')
 export const howToPlayBtn=document.querySelector('#howToPlayBtn')
 export const howToPlayBlock=document.querySelector('#howToPlayBlock')

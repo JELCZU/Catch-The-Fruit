@@ -6,92 +6,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fruit collector</title>
   <link rel="icon" type="image/png" href="/src/img/apple-Favicon.png" >
-  <link rel="stylesheet" href="/src/css/index.css">
+  <link rel="stylesheet" type="text/css" href="/src/css/style.css" />
 </head>
 <body style="margin: 0; align-content: center; background-image: url('/src/img/Brown.png');">
-  <div >
-
-  
-  <canvas  class="myCanvas"></canvas>
-  <div style="position: absolute;
-    padding-left: 24%;
-    padding-top: 12%;
-    color: white;
-    font-size: xx-large;
-    ">
-    <span >Score:</span><span id="scoreElement">0</span>
-  </div>
-  <div
-  id="displayText"
-  style="position: absolute;
-    color: black;
-    align-items: center;
-    justify-content: center;
-    top: 30%;
-    right:0;
-    bottom: 0;
-    left:  46%;
-    display: block;
-    font-size: xx-large;
-    border-width: 5px;
-  ">
-  </div>
-  <div id="menuBlock" class="menuBlock" >
-    <div>
-      <h1 id="scoreElementMenu" style="text-align:center; ">0</h1>
-      <H2 style="text-align:center;">Points</h2>
-      <button  class="btn-center" id="startGameBtn">Start Game</button>
-      <button  class="btn-center" id="howToPlayBtn">How to play</button>
+  <div class="container-outside">
+    <div class="container-canvas">
+      <canvas  class="myCanvas"></canvas>
+    <div class="score">
+      <span >Score:</span><span id="scoreElement">0</span>
     </div>
-  </div>
-  <div id="howToPlayBlock" class="menuBlock" style="padding:0%;display: none;" >
-    <div>
-      <h1 id="scoreElementMenu" style="text-align:center; ">How to play</h1>
-      <h2  class="btn-center" id="startGameBtn" style="top:20px ;">Goal of the game is to catch falling fruits. Every catched fruit gives you points. Your score is visible at left corner and you can see it at the end of game. When fruit hits the ground then is game over.</H2>
-        <table class="btn-center" style="padding-bottom: 80%; border:0px">
-          <td  style="border: none; ">
-            <table style="top:330px">
-              <tr >
-                <td ><h2>Key</h2></td> <td><h2>Action</h2></td>
-              </tr>
-              <tr>
-                <td ><h3>W</h3></td> <td><h3>Jump</h3></td>
-              </tr>
-              <tr>
-                <td><h3>A</h3></td> <td><h3>Left</h3></td>
-              </tr>
-              <tr>
-                <td><h3>S</h3></td> <td><h3>Dive in air</h3></td>
-              </tr>
-              <tr>
-                <td><h3>D</h3></td> <td><h3>Right</h3></td>
-              </tr>
-            </table>
-          </td>
-          <td style="border: none; ">
-            <table style="top:330px">
-              <tr>
-                <td ><h2>Fruit</h2></td> <td><h2>Points</h2></td>
-              </tr>
-              <tr>
-                <td><img src="/src/img/Apple.png" height="56" width="48"alt="Apple"></td> <td><h3>+10 points</h3></td>
-              </tr>
-              <tr>
-                <td><img src="/src/img/Cherries.png" height="56" width="56" alt="Cherries"></td> <td><h3>+15 points</h3></td>
-              </tr>
-              <tr>
-                <td><img src="/src/img/Bananas.png" height="56" width="56" alt="Bananas"></td> <td><h3>+20 points</h3></td>
-              </tr>
-              <tr>
-                <td><img src="/src/img/Orange.png" height="56" width="68" alt="Orange"></td> <td><h3>+30 points</h3></td>
-              </tr>
-            </table>
-          </td>
+    <div class="game-status"id="displayText"> </div>
+    <div id="menuBlock" class="menu-block" >
+        <h1 id="elementMenu">0</h1>
+        <h2>Points</h2>
+        <button  class="menu-btn" id="startGameBtn">Start Game</button>
+        <button  class="menu-btn" id="howToPlayBtn">How to play</button>
+        <button  class="menu-btn" id="howToPlayBtn">High scores</button>
+    </div>
+    <div id="howToPlayBlock" class="menu-block" style="display: none;" >
+      <div>
+        <h1 id="scoreElementMenu">How to play</h1>
+        <p >Goal of the game is to catch falling fruits. Every catched fruit gives you points. Your score is visible at left corner and you can see it at the end of game. When fruit hits the ground then is game over.</p>
+        <div class="table-box"><table>
+          <tr >
+            <td ><h2>Key</h2></td> <td><h2>Action</h2></td>
+          </tr>
+          <tr>
+            <td ><h3>W</h3></td> <td><h3>Jump</h3></td>
+          </tr>
+          <tr>
+            <td><h3>A</h3></td> <td><h3>Left</h3></td>
+          </tr>
+          <tr>
+            <td><h3>S</h3></td> <td><h3>Dive in air</h3></td>
+          </tr>
+          <tr>
+            <td><h3>D</h3></td> <td><h3>Right</h3></td>
+          </tr>
         </table>
-      <button  class="btn-center" id="howToPlayCloseBtn" style="margin-top: 0%;">Close</button>
-    </div>
-  </div>
-  <script type="module" src="/src/js/index.js"></script>
-</div>
+        <table>
+          <tr>
+            <td><h2>Fruit</h2></td> <td><h2>Points</h2></td>
+          </tr>
+          <tr>
+            <td><img src="/src/img/Apple.png" height="56" width="48"alt="Apple"></td> <td><h3>+10 points</h3></td>
+          </tr>
+          <tr>
+            <td><img src="/src/img/Cherries.png" height="56" width="56" alt="Cherries"></td> <td><h3>+15 points</h3></td>
+          </tr>
+          <tr>
+            <td><img src="/src/img/Bananas.png" height="56" width="56" alt="Bananas"></td> <td><h3>+20 points</h3></td>
+          </tr>
+          <tr>
+            <td><img src="/src/img/Orange.png" height="56" width="68" alt="Orange"></td> <td><h3>+30 points</h3></td>
+          </tr>
+        </table></div>
+        <button  class="menu-btn" id="howToPlayCloseBtn" >Close</button>
+      </div>
+    <script type="module" src="/src/js/index.js"></script></div>
 </body>
 </html>
