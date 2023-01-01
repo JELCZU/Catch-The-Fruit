@@ -3,7 +3,7 @@ export class config{
   this.canvas={
     width:1280,
     height:720,
-    imageSource:'/src/img/Background_2.png'
+    imageSource:'/src/img/Background.png'
   }
   this.gravity=0.1;
   this.fruitsMaxRespawnTime=3000//in ms
