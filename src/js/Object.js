@@ -16,7 +16,7 @@ export class object{
     this.height=height;
     this.color="blue";
     this.image=new Image()
-    this.image.src="/src/img/Graphic-Not-Found.png"
+    this.image.src="./img/Graphic-Not-Found.png"
     this.framesMax=1
     this.scale=2
     this.width=this.image.width/this.framesMax*this.scale
