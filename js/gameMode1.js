@@ -50,7 +50,10 @@ export class gameMode1 {
 
   // eslint-disable-next-line no-shadow
   CheckFruitsHitGround(fruit) {
-    if (fruit.position.y + fruit.height >= canvas.height - 55) {
+    if (
+      fruit.position.y + fruit.height >=
+      canvas.height - this.myConfig.canvas.height / 15
+    ) {
       clearTimeout(this.SpawnTimeoutId);
       // eslint-disable-next-line no-shadow
       this.fruits.forEach((fruit, index) => {

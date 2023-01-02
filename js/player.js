@@ -30,24 +30,25 @@ export class player extends object {
         pressed: false,
       },
     };
-    this.playerControl();
+    this.playerControl(myConfig);
     this.keysStatus();
   }
 
-  playerControl() {
-    window.requestAnimationFrame(() => this.playerControl());
+  playerControl(myConfig) {
+    window.requestAnimationFrame(() => this.playerControl(myConfig));
     if (this.keys.a.pressed) {
-      this.velocity.x = -15;
+      this.velocity.x = -myConfig.canvas.width / 60;
     } else if (this.keys.d.pressed) {
-      this.velocity.x = 15;
+      this.velocity.x = myConfig.canvas.width / 60;
     } else this.velocity.x = 0;
     if (
       this.keys.w.pressed &&
-      this.position.y === canvas.height - this.height - 55
+      this.position.y ===
+        canvas.height - this.height - myConfig.canvas.height / 15
     ) {
-      this.velocity.y = -10;
+      this.velocity.y = -myConfig.canvas.height / 75;
     } else if (this.keys.s.pressed) {
-      this.velocity.y += +2;
+      this.velocity.y += myConfig.canvas.height / 300;
     }
   }
 
