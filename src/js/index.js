@@ -11,6 +11,7 @@ import {gameMode1} from "./gameMode1.js";
 
 
   const myConfig= new config()
+
   const myCanvasGameBoard=new canvasGameBoard(myConfig)
   const Player1 = new player(myConfig, canvas.width/2,canvas.height-150,50,200)
   const MygameMode1=new gameMode1(myConfig,Player1)
