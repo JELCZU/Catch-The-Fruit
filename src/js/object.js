@@ -26,7 +26,7 @@ export class object {
     };
     // eslint-disable-next-line no-unused-expressions
     this.animationId;
-    this.update();
+    this.update(myConfig);
   }
 
   draw() {
@@ -45,10 +45,12 @@ export class object {
     );
   }
 
-  update() {
+  update(myConfig) {
     // console.log("this y: "+ this.position.y)
     // console.log("canvas height: "+canvas.height)
-    this.animationId = window.requestAnimationFrame(() => this.update());
+    this.animationId = window.requestAnimationFrame(() =>
+      this.update(myConfig)
+    );
     if (
       this.position.x + this.width + this.velocity.x >= canvas.width &&
       this.velocity.x > 0
@@ -62,8 +64,12 @@ export class object {
     } else {
       this.position.x += this.velocity.x;
     }
-    if (this.position.y + this.height + this.velocity.y >= canvas.height - 55) {
-      this.position.y = canvas.height - this.height - 55;
+    if (
+      this.position.y + this.height + this.velocity.y >=
+      canvas.height - myConfig.canvas.height / 15
+    ) {
+      this.position.y =
+        canvas.height - this.height - myConfig.canvas.height / 15;
       this.velocity.y = 0;
     } else {
       this.velocity.y += this.gravity;
