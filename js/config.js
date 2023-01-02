@@ -11,8 +11,8 @@ export class config{
   this.player={
     startScore:0,
     imageSource:"./img/Player.png",
-    framesMax:11
-  }
+    framesMax:1
+  },
   this.fruitsTypes = [
     {
       name : "Apple",

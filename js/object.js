@@ -19,8 +19,10 @@ export class object{
     this.image.src="./img/Graphic-Not-Found.png"
     this.framesMax=1
     this.scale=2
-    this.width=this.image.width/this.framesMax*this.scale
-    this.height=this.image.height*this.scale
+    this.image.onload=()=>{this.width= this.image.width/this.framesMax*this.scale
+    this.height=  this.image.height*this.scale
+
+   }
     this.animationId
     this.update();
   }
