@@ -8,7 +8,6 @@ export class player extends object{
    this.image.src=myConfig.player.imageSource
    this.framesMax=myConfig.player.framesMax
    this.scale=3
-  //  this.loadimageParams()
    this.image.onload=()=>{this.width= this.image.width/this.framesMax*this.scale
    this.height=  this.image.height*this.scale
    this.position.x= canvas.width/2-this.width/2
