@@ -2,8 +2,10 @@
 export class config {
   constructor() {
     this.canvas = {
-      width: 1280,
-      height: 720,
+      // width: 1280,
+      // height: 720,
+      width: window.innerWidth * 0.9,
+      height: window.innerHeight * 0.9,
       imageSource: "./img/Background.png",
     };
     this.gravity = 0.1;
