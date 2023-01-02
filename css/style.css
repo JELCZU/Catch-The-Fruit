@@ -66,8 +66,8 @@ td {
   padding: 10px;
 }
 .container-canvas {
-  width: 1280px;
-  height: 720px;
+  width: 90vw;
+  height: 90vh;
   position: relative;
   margin: auto auto;
 }
@@ -78,18 +78,20 @@ td {
 }
 .score {
   position: absolute;
-  left: 30px;
-  top: 55px;
-  color: white;
+  left: 2vw;
+  top: 7vh;
+  color: #245245;
+
   font-size: xx-large;
 }
 .game-status {
   position: absolute;
+  width: 100%;
   color: black;
-  top: 150px;
-  left: 557px;
+  top: 20vh;
+  text-align: center;
   font-size: xx-large;
 }
 .menu-block-container {
-  background-color: red;
+  background-color: white;
 }
