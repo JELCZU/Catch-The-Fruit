@@ -3,8 +3,7 @@
 Catch the fruit is game developed using HTML+CSS+JavaScript.
 Goal of the game is to catch falling fruits. 
 
-Demo:
-https://jelczu.github.io/Catch-The-Fruit/
+[Demo](https://jelczu.github.io/Catch-The-Fruit/) 
 
 ## Table of contents
 * [Instalation](#Instalation)
